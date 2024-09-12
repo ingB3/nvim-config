@@ -77,6 +77,10 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
+" vim-airline-clock
+" let g:airline#extensions#clock#format = '%H:%M:%S'
+let g:airline#extensions#clock#format = '%H:%M'
+
 " set vim-plug for neovim
 call plug#begin('~/.vim/plugged')
 
@@ -95,12 +99,13 @@ Plug 'Yggdroot/indentLine'
 "Plug 'pboettch/vim-cmake-syntax'
 "Plug 'morhertz/gruvbox'
 "Plug 'tpope/vim-fugitive'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 "Plug 'alemidev/vim-combo'
 Plug 'nvim-lua/plenary.nvim'    " For nvim-telescope
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " For nvim-telescope
+Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' } " For nvim-telescope
 Plug 'folke/tokyonight.nvim'
+Plug 'enricobacis/vim-airline-clock'
 
 call plug#end()
 

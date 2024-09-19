@@ -24,7 +24,7 @@ nmap <silent> T :below terminal<CR>
 tnoremap <silent> <Esc> <C-\><C-n>
 
 " VISUAL BLOCK MODE
-"nmap <silent> <c-g> <c-v>
+" nmap <silent> <c-g> <c-v>
 
 " delimitmate
 let delimitMate_expand_cr = 1
@@ -39,7 +39,7 @@ let g:airline_theme = 'tokyonight'
 
 " indentLine
 let g:indentLine_enabled = 1
-"let g:indentLine_char = '¦'
+" let g:indentLine_char = '¦'
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 let g:indentLine_setConceal = 1
 let g:vim_json_conceal = 0
@@ -54,22 +54,22 @@ nmap <silent> <F12> :TagbarToggle<CR>
 let g:tagbar_width=40
 
 " set not use preview in python
-"set completeopt-=preview
+" set completeopt-=preview
 set noic
 
-"" markdown-preview
-"let g:mkdp_auto_start = 1
-"let g:mkdp_auto_close = 1
-"let g:mkdp_refresh_slow = 0
-"let g:mkdp_command_for_global = 0
-"let g:mkdp_open_to_the_world = 0
-"let g:mkdp_open_ip = ''
+" markdown-preview
+" let g:mkdp_auto_start = 1
+" let g:mkdp_auto_close = 1
+" let g:mkdp_refresh_slow = 0
+" let g:mkdp_command_for_global = 0
+" let g:mkdp_open_to_the_world = 0
+" let g:mkdp_open_ip = ''
 
 " set coc.nvim extensions
 let g:coc_global_extensions = ['coc-python', 'coc-clangd', 'coc-cmake', 'coc-json', 'coc-sh', 'coc-webview', 'coc-markdown-preview-enhanced', 'coc-fish']
 
 " vim-combo
-"set statusline=%{g:combo}
+" set statusline=%{g:combo}
 
 " telescope.nvim
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
@@ -84,67 +84,87 @@ let g:airline#extensions#clock#format = '%H:%M'
 " set vim-plug for neovim
 call plug#begin('~/.vim/plugged')
 
+" NERD Commenter
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+" customize keymapping
+map <Leader>cc <plug>NERDComToggleComment
+map <Leader>c<space> <plug>NERDComComment
+
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
-"Plug 'scrooloose/syntastic'
-"Plug 'Shougo/neocomplcache'
+" Plug 'scrooloose/syntastic'
+" Plug 'Shougo/neocomplcache'
 Plug 'preservim/tagbar'
 Plug 'Raimondi/delimitMate'
 Plug 'terryma/vim-smooth-scroll'
 Plug 'Yggdroot/indentLine'
-"Plug 'ctrlpvim/ctrlp.vim'  " Don't work on macbook
-"Plug 'iamcco/markdown-preview.nvim'
-"Plug 'pboettch/vim-cmake-syntax'
-"Plug 'morhertz/gruvbox'
-"Plug 'tpope/vim-fugitive'
+" Plug 'ctrlpvim/ctrlp.vim'  " Don't work on macbook
+" Plug 'iamcco/markdown-preview.nvim'
+" Plug 'pboettch/vim-cmake-syntax'
+" Plug 'morhertz/gruvbox'
+" Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-"Plug 'alemidev/vim-combo'
+" Plug 'alemidev/vim-combo'
 Plug 'nvim-lua/plenary.nvim'    " For nvim-telescope
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' } " For nvim-telescope
 Plug 'folke/tokyonight.nvim'
 Plug 'enricobacis/vim-airline-clock'
+Plug 'preservim/nerdcommenter'
 
 call plug#end()
 
-"" Plugin setup
-"set nocompatible
-"filetype off
+" " Plugin setup
+" set nocompatible
+" filetype off
 "
-"set rtp+=~/.vim/bundle/Vundle.vim
+" set rtp+=~/.vim/bundle/Vundle.vim
 "
-"" Vundle
-"set nocompatible              " be iMproved, required
-"filetype off                  " required
+" " Vundle
+" set nocompatible              " be iMproved, required
+" filetype off                  " required
 "
-"" set the runtime path to include Vundle and initialize
-"set rtp+=~/.vim/bundle/Vundle.vim
-"call vundle#begin()
-"" alternatively, pass a path where Vundle should install plugins
-""call vundle#begin('~/some/path/here')
+" " set the runtime path to include Vundle and initialize
+" set rtp+=~/.vim/bundle/Vundle.vim
+" call vundle#begin()
+" " alternatively, pass a path where Vundle should install plugins
+" "call vundle#begin('~/some/path/here')
 "
-"" let Vundle manage Vundle, required
-"Plugin 'VundleVim/Vundle.vim'
+" " let Vundle manage Vundle, required
+" Plugin 'VundleVim/Vundle.vim'
 "
-"" Keep Plugin commands between vundle#begin/end.
+" " Keep Plugin commands between vundle#begin/end.
 "
-"Plugin 'vim-airline/vim-airline'
-"Plugin 'scrooloose/nerdtree'
-"Plugin 'scrooloose/syntastic'
-"Plugin 'Shougo/neocomplcache'
-"Plugin 'Raimondi/delimitMate'
-"Plugin 'terryma/vim-smooth-scroll'
-"Plugin 'Yggdroot/indentLine'
-"Plugin 'iamcco/markdown-preview.nvim'
-"" Plugin 'alemidev/vim-combo'
+" Plugin 'vim-airline/vim-airline'
+" Plugin 'scrooloose/nerdtree'
+" Plugin 'scrooloose/syntastic'
+" Plugin 'Shougo/neocomplcache'
+" Plugin 'Raimondi/delimitMate'
+" Plugin 'terryma/vim-smooth-scroll'
+" Plugin 'Yggdroot/indentLine'
+" Plugin 'iamcco/markdown-preview.nvim'
+" " Plugin 'alemidev/vim-combo'
 "
-"" All of your Plugins must be added before the following line
-"call vundle#end()            " required
-"filetype plugin indent on    " required
-"" To ignore plugin indent changes, instead use:
-"filetype plugin on
+" " All of your Plugins must be added before the following line
+" call vundle#end()            " required
+" filetype plugin indent on    " required
+" " To ignore plugin indent changes, instead use:
+" filetype plugin on
 "
 " Brief help
 " :PluginList       - lists configured plugins

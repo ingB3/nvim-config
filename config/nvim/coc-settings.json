@@ -1,3 +1,10 @@
 {
- "diagnostic.checkCurrentLine": true
+  "diagnostic.checkCurrentLine": true,
+  "python.linting.flake8Args": [
+    "--max-line-length=250",
+    "--ignore=E501",
+    "--ignore=E225",
+    "--ignore=E226",
+    "--ignore=W605",
+  ]
 }

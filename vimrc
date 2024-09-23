@@ -26,6 +26,20 @@ tnoremap <silent> <Esc> <C-\><C-n>
 " VISUAL BLOCK MODE
 " nmap <silent> <c-g> <c-v>
 
+" User Definition Function
+
+" Relative Number Setting
+function! ToggleNumber()
+    if(&relativenumber == 1)
+        set norelativenumber
+        set number
+    else
+        set relativenumber
+    endif
+endfunc
+
+noremap <silent> <leader>n :call ToggleNumber()<CR>
+
 " delimitmate
 let delimitMate_expand_cr = 1
 
@@ -128,52 +142,6 @@ Plug 'enricobacis/vim-airline-clock'
 Plug 'preservim/nerdcommenter'
 
 call plug#end()
-
-" " Plugin setup
-" set nocompatible
-" filetype off
-"
-" set rtp+=~/.vim/bundle/Vundle.vim
-"
-" " Vundle
-" set nocompatible              " be iMproved, required
-" filetype off                  " required
-"
-" " set the runtime path to include Vundle and initialize
-" set rtp+=~/.vim/bundle/Vundle.vim
-" call vundle#begin()
-" " alternatively, pass a path where Vundle should install plugins
-" "call vundle#begin('~/some/path/here')
-"
-" " let Vundle manage Vundle, required
-" Plugin 'VundleVim/Vundle.vim'
-"
-" " Keep Plugin commands between vundle#begin/end.
-"
-" Plugin 'vim-airline/vim-airline'
-" Plugin 'scrooloose/nerdtree'
-" Plugin 'scrooloose/syntastic'
-" Plugin 'Shougo/neocomplcache'
-" Plugin 'Raimondi/delimitMate'
-" Plugin 'terryma/vim-smooth-scroll'
-" Plugin 'Yggdroot/indentLine'
-" Plugin 'iamcco/markdown-preview.nvim'
-" " Plugin 'alemidev/vim-combo'
-"
-" " All of your Plugins must be added before the following line
-" call vundle#end()            " required
-" filetype plugin indent on    " required
-" " To ignore plugin indent changes, instead use:
-" filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo at http://vim-scripts.org/vim/scripts.html; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
 
 " vim color scheme
 " colorscheme vim

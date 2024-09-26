@@ -21,7 +21,7 @@ let g:neocomplcache_enable_at_startup = 1
 
 " terminal
 nmap <silent> T :below terminal<CR>
-tnoremap <silent> <Esc> <C-\><C-n>
+" tnoremap <silent> <Esc> <C-\><C-n>
 
 " VISUAL BLOCK MODE
 " nmap <silent> <c-g> <c-v>

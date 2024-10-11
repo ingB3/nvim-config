@@ -66,6 +66,8 @@ noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 10, 2)<CR>
 " tagbar
 nmap <silent> <F12> :TagbarToggle<CR>
 let g:tagbar_width=40
+" macos + homebrew
+let g:tagbar_ctags_bin='/opt/homebrew/bin/ctags'
 
 " set not use preview in python
 " set completeopt-=preview
@@ -95,9 +97,6 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 " let g:airline#extensions#clock#format = '%H:%M:%S'
 let g:airline#extensions#clock#format = '%H:%M'
 
-" set vim-plug for neovim
-call plug#begin('~/.vim/plugged')
-
 " NERD Commenter
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
@@ -116,6 +115,9 @@ let g:NERDTrimTrailingWhitespace = 1
 " customize keymapping
 map <Leader>cc <plug>NERDComToggleComment
 map <Leader>c<space> <plug>NERDComComment
+
+" set vim-plug for neovim
+call plug#begin('~/.vim/plugged')
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -140,6 +142,7 @@ Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' } " For nvim-telesco
 Plug 'folke/tokyonight.nvim'
 Plug 'enricobacis/vim-airline-clock'
 Plug 'preservim/nerdcommenter'
+Plug 'mistricky/codesnap.nvim', { 'do': 'make' }
 
 call plug#end()
 
@@ -147,3 +150,21 @@ call plug#end()
 " colorscheme vim
 " colorscheme tokyonight-moon
 colorscheme tokyonight-moon
+
+" set codesnap lua script
+:lua require("codesnap").setup({
+    \ mac_window_bar = true,
+    \ title = "",
+    \ code_font_family = "GoormSansCode400 Nerd Font",
+    \ watermark = "",
+    \ bg_theme = "default",
+    \ breadcrumbs_separator = "/",
+    \ has_breadcrumbs = false,
+    \ has_line_number = false,
+    \ show_workspace = false,
+    \ min_width = 0,
+    \ bg_x_padding = 122,
+    \ bg_y_padding = 82,
+    \ bg_padding = 0,
+    \ save_path = os.getenv("XDG_PICTURES_DIR") or (os.getenv("HOME").. "/Pictures")
+\ })

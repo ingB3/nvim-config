@@ -9,6 +9,7 @@ set nobackup
 set noswapfile
 
 set fileencodings=utf8,euc-kr
+set clipboard=unnamed " use OS clipboard
 
 syntax on
 
@@ -50,6 +51,10 @@ nmap <silent> <c-f> :NERDTreeToggle<CR>
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'tokyonight'
+let g:airline#extensions#tabline#enabled = 1              " vim-airline 버퍼 목록 켜기
+" let g:airline#extensions#tabline#fnamemod = ':t'          " vim-airline 버퍼 목록 파일명만 출력
+let g:airline#extensions#tabline#buffer_nr_show = 1       " buffer number를 보여준다
+let g:airline#extensions#tabline#buffer_nr_format = '%s:' " buffer number format
 
 " indentLine
 let g:indentLine_enabled = 1
@@ -116,6 +121,11 @@ let g:NERDTrimTrailingWhitespace = 1
 map <Leader>cc <plug>NERDComToggleComment
 map <Leader>c<space> <plug>NERDComComment
 
+" vim-python-doc
+let g:vpd_indent = '    '
+let g:python_style = 'numpy'
+nnoremap <silent> <Leader>d <cmd>Docstring<CR>
+
 " set vim-plug for neovim
 call plug#begin('~/.vim/plugged')
 
@@ -143,6 +153,11 @@ Plug 'folke/tokyonight.nvim'
 Plug 'enricobacis/vim-airline-clock'
 Plug 'preservim/nerdcommenter'
 Plug 'mistricky/codesnap.nvim', { 'do': 'make' }
+Plug 'pixelneo/vim-python-docstring'
+Plug 'echasnovski/mini.nvim', { 'branch': 'stable' }    " For render-markdown
+Plug 'nvim-tree/nvim-web-devicons'  " For render-markdown
+Plug 'MeanderingProgrammer/render-markdown.nvim'    " pip install pylatexenc
+Plug '3rd/image.nvim'
 
 call plug#end()
 
@@ -158,13 +173,50 @@ colorscheme tokyonight-moon
     \ code_font_family = "GoormSansCode400 Nerd Font",
     \ watermark = "",
     \ bg_theme = "default",
+    \ bg_color = "#FFFFFF",
     \ breadcrumbs_separator = "/",
     \ has_breadcrumbs = false,
     \ has_line_number = false,
     \ show_workspace = false,
-    \ min_width = 0,
-    \ bg_x_padding = 122,
-    \ bg_y_padding = 82,
-    \ bg_padding = 0,
+    \ bg_x_padding = 54,
+    \ bg_y_padding = 46,
     \ save_path = os.getenv("XDG_PICTURES_DIR") or (os.getenv("HOME").. "/Pictures")
+\ })
+
+" set image.nvim lua script
+:lua require("image").setup({
+  \ backend = "kitty",
+  \ processor = "magick_cli",
+  \ integrations = {
+    \ markdown = {
+      \ enabled = true,
+      \ clear_in_insert_mode = false,
+      \ download_remote_images = true,
+      \ only_render_image_at_cursor = false,
+      \ filetypes = { "markdown", "vimwiki" },
+    \ },
+    \ neorg = {
+      \ enabled = true,
+      \ filetypes = { "norg" },
+    \ },
+    \ typst = {
+      \ enabled = true,
+      \ filetypes = { "typst" },
+    \ },
+    \ html = {
+      \ enabled = false,
+    \ },
+    \ css = {
+      \ enabled = false,
+    \ },
+  \ },
+  \ max_width = nil,
+  \ max_height = nil,
+  \ max_width_window_percentage = nil,
+  \ max_height_window_percentage = 50,
+  \ window_overlap_clear_enabled = false,
+  \ window_overlap_clear_ft_ignore = { "cmp_menu", "cmp_docs", "" },
+  \ editor_only_render_when_focused = false,
+  \ tmux_show_only_in_active_window = false,
+  \ hijack_file_patterns = { "*.png", "*.jpg", "*.jpeg", "*.gif", "*.webp", "*.avif" },
 \ })

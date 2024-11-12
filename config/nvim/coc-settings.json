@@ -1,10 +1,12 @@
 {
+  "python.pythonPath": "/Users/ingbe/.conda/envs/root_env/bin/python3",
   "python.linting.pylintEnabled": false,
   "python.linting.flake8Enabled": true,
   "python.linting.enabled": true,
   "diagnostic.checkCurrentLine": true,
   "python.linting.flake8Args": [
     "--max-line-length=250",
-    "--ignore=E501,E225,E226,E251,W605"
-  ]
+    "--ignore=E501,E225,E226,E251,E302,E305,W605"
+  ],
+  "clangd.fallbackFlags": [ "-std=c++17" ]
 }

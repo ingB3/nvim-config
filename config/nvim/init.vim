@@ -1,4 +1,4 @@
 set runtimepath+=~/.vim,~/.vim/after
 set packpath+=~/.vim
 source ~/.vimrc
-set mouse=
+set mouse=a

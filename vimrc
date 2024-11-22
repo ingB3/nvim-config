@@ -1,5 +1,6 @@
 set et
-set nu
+" set nu
+set relativenumber
 set ts=4
 set sw=4
 set expandtab
@@ -19,9 +20,11 @@ let @k = 's{p'
 let @j = 's[p'
 
 let g:neocomplcache_enable_at_startup = 1
+let g:loaded_perl_provider = 0
+let g:python3_host_prog = '$PYROOT'
 
 " terminal
-nmap <silent> T :below terminal<CR>
+nmap <silent> T :terminal<CR>
 " tnoremap <silent> <Esc> <C-\><C-n>
 
 " VISUAL BLOCK MODE
@@ -30,7 +33,7 @@ nmap <silent> T :below terminal<CR>
 " User Definition Function
 
 " Relative Number Setting
-function! ToggleNumber()
+function! ToggleRelativeNumber()
     if(&relativenumber == 1)
         set norelativenumber
         set number
@@ -39,7 +42,7 @@ function! ToggleNumber()
     endif
 endfunc
 
-noremap <silent> <leader>n :call ToggleNumber()<CR>
+noremap <silent> <leader>r :call ToggleRelativeNumber()<CR>
 
 " delimitmate
 let delimitMate_expand_cr = 1
@@ -88,6 +91,13 @@ set noic
 
 " set coc.nvim extensions
 let g:coc_global_extensions = ['coc-python', 'coc-clangd', 'coc-cmake', 'coc-json', 'coc-sh', 'coc-webview', 'coc-markdown-preview-enhanced', 'coc-fish']
+" Remap <C-f> and <C-b> to scroll float windows/popups
+" nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+" nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+" vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+" vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 
 " vim-combo
 " set statusline=%{g:combo}
@@ -118,8 +128,8 @@ let g:NERDCommentEmptyLines = 1
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
 " customize keymapping
-map <Leader>cc <plug>NERDComToggleComment
-map <Leader>c<space> <plug>NERDComComment
+map <leader>cc <plug>NERDComToggleComment
+map <leader>c<space> <plug>NERDComComment
 
 " vim-python-doc
 let g:vpd_indent = '    '
@@ -147,17 +157,20 @@ Plug 'Yggdroot/indentLine'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 " Plug 'alemidev/vim-combo'
 Plug 'nvim-lua/plenary.nvim'    " For nvim-telescope
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
+" Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
+Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }     " or { 'tag': '0.1.8' }
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' } " For nvim-telescope
 Plug 'folke/tokyonight.nvim'
 Plug 'enricobacis/vim-airline-clock'
 Plug 'preservim/nerdcommenter'
 Plug 'mistricky/codesnap.nvim', { 'do': 'make' }
 Plug 'pixelneo/vim-python-docstring'
-Plug 'echasnovski/mini.nvim', { 'branch': 'stable' }    " For render-markdown
-Plug 'nvim-tree/nvim-web-devicons'  " For render-markdown
-Plug 'MeanderingProgrammer/render-markdown.nvim'    " pip install pylatexenc
+" Plug 'echasnovski/mini.nvim', { 'branch': 'stable' }    " For render-markdown
+" Plug 'nvim-tree/nvim-web-devicons'  " For render-markdown
+" Plug 'MeanderingProgrammer/render-markdown.nvim'    " pip install pylatexenc
 Plug '3rd/image.nvim'
+Plug 'jake-stewart/multicursor.nvim'
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 

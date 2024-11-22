@@ -1,10 +1,11 @@
 set et
-" set nu
-set relativenumber
+set nu
+" set relativenumber
 set ts=4
 set sw=4
 set expandtab
 set ruler
+set cursorline
 
 set nobackup
 set noswapfile

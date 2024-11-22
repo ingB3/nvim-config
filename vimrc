@@ -181,4 +181,4 @@ call plug#end()
 colorscheme tokyonight-moon
 
 " codesnap.nvim, image.nvim
-:lua require("init")
+:lua require("plugin")

@@ -1,28 +1,23 @@
-set et
-set nu
+" set expandtab
+" set cursorline
+" set number
 " set relativenumber
-set ts=4
-set sw=4
-set expandtab
-set ruler
-set cursorline
+" set ruler
+" set nobackup
+" set noswapfile
+" set noignorecase
 
-set nobackup
-set noswapfile
+" set ts=4
+" set sw=4
 
-set fileencodings=utf8,euc-kr
-set clipboard=unnamed " use OS clipboard
+" set fileencodings=utf8,euc-kr
+" set clipboard=unnamed " use OS clipboard
 
-syntax on
+" syntax on
 
-" bracket macro
-let @l = 's(p'
-let @k = 's{p'
-let @j = 's[p'
-
-let g:neocomplcache_enable_at_startup = 1
-let g:loaded_perl_provider = 0
-let g:python3_host_prog = '$PYROOT'
+" let g:neocomplcache_enable_at_startup = 1
+" let g:loaded_perl_provider = 0
+" let g:python3_host_prog = '$VIMPYTHON'
 
 " terminal
 nmap <silent> T :terminal<CR>
@@ -76,11 +71,10 @@ noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 10, 2)<CR>
 nmap <silent> <F12> :TagbarToggle<CR>
 let g:tagbar_width=40
 " macos + homebrew
-let g:tagbar_ctags_bin='/opt/homebrew/bin/ctags'
+let g:tagbar_ctags_bin='$VIMCTAGS'
 
 " set not use preview in python
 " set completeopt-=preview
-set noic
 
 " markdown-preview
 " let g:mkdp_auto_start = 1
@@ -91,7 +85,7 @@ set noic
 " let g:mkdp_open_ip = ''
 
 " set coc.nvim extensions
-let g:coc_global_extensions = ['coc-python', 'coc-clangd', 'coc-cmake', 'coc-json', 'coc-sh', 'coc-webview', 'coc-markdown-preview-enhanced', 'coc-fish']
+let g:coc_global_extensions = ['coc-python', 'coc-clangd', 'coc-cmake', 'coc-json', 'coc-sh', 'coc-webview', 'coc-markdown-preview-enhanced', 'coc-fish', 'coc-lua']
 " Remap <C-f> and <C-b> to scroll float windows/popups
 " nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
 " nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
@@ -181,4 +175,4 @@ call plug#end()
 colorscheme tokyonight-moon
 
 " codesnap.nvim, image.nvim
-:lua require("plugin")
+" :lua require("plugin")

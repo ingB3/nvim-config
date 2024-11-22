@@ -8,5 +8,6 @@
     "--max-line-length=250",
     "--ignore=E501,E225,E226,E251,E302,E305,W605"
   ],
-  "clangd.fallbackFlags": [ "-std=c++17" ]
+  "clangd.fallbackFlags": [ "-std=c++17" ],
+  "Lua.diagnostics.globals": ["vim"]
 }

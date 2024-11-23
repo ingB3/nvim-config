@@ -21,7 +21,7 @@
 
 " terminal
 nmap <silent> T :terminal<CR>
-" tnoremap <silent> <Esc> <C-\><C-n>
+tnoremap <silent> <C-[> <C-\><C-n>
 
 " VISUAL BLOCK MODE
 " nmap <silent> <c-g> <c-v>
@@ -39,6 +39,10 @@ function! ToggleRelativeNumber()
 endfunc
 
 noremap <silent> <leader>r :call ToggleRelativeNumber()<CR>
+
+" indent
+vnoremap <silent> < <gv
+vnoremap <silent> > >gv
 
 " delimitmate
 let delimitMate_expand_cr = 1
@@ -85,7 +89,7 @@ let g:tagbar_ctags_bin='$VIMCTAGS'
 " let g:mkdp_open_ip = ''
 
 " set coc.nvim extensions
-let g:coc_global_extensions = ['coc-python', 'coc-clangd', 'coc-cmake', 'coc-json', 'coc-sh', 'coc-webview', 'coc-markdown-preview-enhanced', 'coc-fish', 'coc-lua']
+let g:coc_global_extensions = ['coc-python', 'coc-clangd', 'coc-cmake', 'coc-json', 'coc-sh', 'coc-webview', 'coc-markdown-preview-enhanced', 'coc-fish', 'coc-lua', 'coc-snippets']
 " Remap <C-f> and <C-b> to scroll float windows/popups
 " nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
 " nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
@@ -160,9 +164,9 @@ Plug 'enricobacis/vim-airline-clock'
 Plug 'preservim/nerdcommenter'
 Plug 'mistricky/codesnap.nvim', { 'do': 'make' }
 Plug 'pixelneo/vim-python-docstring'
-" Plug 'echasnovski/mini.nvim', { 'branch': 'stable' }    " For render-markdown
-" Plug 'nvim-tree/nvim-web-devicons'  " For render-markdown
-" Plug 'MeanderingProgrammer/render-markdown.nvim'    " pip install pylatexenc
+Plug 'echasnovski/mini.nvim', { 'branch': 'stable' }    " For render-markdown
+Plug 'nvim-tree/nvim-web-devicons'  " For render-markdown
+Plug 'MeanderingProgrammer/render-markdown.nvim'    " pip install pylatexenc
 Plug '3rd/image.nvim'
 Plug 'jake-stewart/multicursor.nvim'
 Plug 'airblade/vim-gitgutter'

@@ -1,4 +1,10 @@
 {
+  "suggest.floatConfig": {
+    "border": true,
+    "rounded": false,
+    "winblend": 0,
+    "shadow": true
+  },
   "python.pythonPath": "/Users/ingbe/.conda/envs/root_env/bin/python3",
   "python.linting.pylintEnabled": false,
   "python.linting.flake8Enabled": true,

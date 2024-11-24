@@ -10,9 +10,9 @@ echo cp vimrc ~/.vimrc
 mv ~/.vimrc ~/.backup/
 cp ./.vimrc ~/.vimrc
 
-echo cp config.fish ~/.config/fish/config.fish
-mv ~/.config/fish/config.fish ~/.backup
-cp config.fish ~/.config/fish/config.fish
+# echo cp config.fish ~/.config/fish/config.fish
+# mv ~/.config/fish/config.fish ~/.backup
+# cp config.fish ~/.config/fish/config.fish
 
 echo cp ./nvim ~/.config/nvim
 mv ./nvim ~/.backup

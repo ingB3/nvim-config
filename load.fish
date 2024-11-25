@@ -6,9 +6,9 @@ else
     mkdir ~/.backup
 end
 
-echo cp vimrc ~/.vimrc
-mv ~/.vimrc ~/.backup/
-cp ./.vimrc ~/.vimrc
+# echo cp vimrc ~/.vimrc
+# mv ~/.vimrc ~/.backup/
+# cp ./.vimrc ~/.vimrc
 
 # echo cp config.fish ~/.config/fish/config.fish
 # mv ~/.config/fish/config.fish ~/.backup

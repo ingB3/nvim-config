@@ -10,13 +10,14 @@ vim.opt.softtabstop = 0
 vim.opt.smartindent = false
 vim.opt.wrap = true
 
-
+-- ui
 vim.opt.cursorline = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.ruler = false
 vim.opt.termguicolors = true
 vim.opt.signcolumn = 'auto'
+vim.opt.updatetime = 300
 
 -- search
 vim.opt.incsearch = true

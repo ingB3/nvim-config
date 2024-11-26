@@ -10,6 +10,7 @@ vim.g.coc_global_extensions = {
     'coc-webview',
     'coc-markdown-preview-enhanced',
     'coc-lua',
+    'coc-git',
 }
 
 -- Having longer updatetime (default is 4000 ms = 4s) leads to noticeable

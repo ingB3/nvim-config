@@ -18,7 +18,7 @@ Plug('enricobacis/vim-airline-clock')
 Plug('scrooloose/nerdtree')
 
 -- vim-gitgutter
-Plug('airblade/vim-gitgutter')
+-- Plug('airblade/vim-gitgutter')
 
 -- will should replace nvim-autopaires
 Plug('Raimondi/delimitMate')
@@ -52,7 +52,7 @@ vim.call('plug#end')
 
 require('plugin.vim-airline')
 require('plugin.nerdtree')
-require('plugin.vim-gitgutter')
+-- require('plugin.vim-gitgutter')
 require('plugin.delimitmate')
 require('plugin.tagbar')
 require('plugin.indentLine')

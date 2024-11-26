@@ -33,5 +33,6 @@
   "coc.source.vimtex.filetypes": [
     "tex",
     "plaintex"
-  ]
+  ],
+  "git.enableGutters": false
 }

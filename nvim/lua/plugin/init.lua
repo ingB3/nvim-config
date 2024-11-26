@@ -17,9 +17,6 @@ Plug('enricobacis/vim-airline-clock')
 -- will should replace nvim-tree
 Plug('scrooloose/nerdtree')
 
--- vim-gitgutter
--- Plug('airblade/vim-gitgutter')
-
 -- will should replace nvim-autopaires
 Plug('Raimondi/delimitMate')
 
@@ -28,6 +25,9 @@ Plug('Yggdroot/indentLine')
 
 -- tagbar
 Plug('preservim/tagbar')
+
+-- vim-fugitive
+Plug('tpope/vim-fugitive')
 
 -- LSP
 Plug('neoclide/coc.nvim', { ['branch'] = 'release' })
@@ -52,7 +52,6 @@ vim.call('plug#end')
 
 require('plugin.vim-airline')
 require('plugin.nerdtree')
--- require('plugin.vim-gitgutter')
 require('plugin.delimitmate')
 require('plugin.tagbar')
 require('plugin.indentLine')
@@ -64,5 +63,6 @@ require('plugin.image')
 require('plugin.multicursor')
 require('plugin.vim-python-doc')
 require('plugin.coc')
+require('plugin.coc-git')
 
 vim.cmd[[colorscheme tokyonight-moon]]

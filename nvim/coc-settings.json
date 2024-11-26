@@ -34,5 +34,5 @@
     "tex",
     "plaintex"
   ],
-  "git.enableGutters": false
+  "git.enableGutters": true
 }

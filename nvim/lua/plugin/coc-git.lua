@@ -10,9 +10,9 @@ map('n', ']c', '<Plug>(coc-git-nextconflict)')
 map('n', 'gi', '<Plug>(coc-git-chunkinfo)')
 -- show commit contains current position
 -- map('n', 'gc', '<Plug>(coc-git-commit)')
-map('n', 'gc', ':CocList commits<cr>')
+map('n', 'gc', ':<c-u>CocList commits<cr>')
 -- create text object for git chunks
 map({'o', 'x'}, 'ig', '<Plug>(coc-git-chunk-inner)')
 map({'o', 'x'}, 'ag', '<Plug>(coc-git-chunk-outer)')
 -- show git status
-map('n', 'gs', ':CocList gstatus<cr>')
+map('n', 'gs', ':<c-u>CocList gstatus<cr>')

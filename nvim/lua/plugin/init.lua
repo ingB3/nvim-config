@@ -5,14 +5,13 @@ vim.call('plug#begin', '~/.vim/plugged')
 -- Colorscheme
 Plug('folke/tokyonight.nvim')
 
+Plug('nvim-tree/nvim-web-devicons')
 Plug('ryanoasis/vim-devicons')
 Plug('3rd/image.nvim')
-Plug('jake-stewart/multicursor.nvim')
+-- Plug('jake-stewart/multicursor.nvim')
 
--- vim-airline
-Plug('vim-airline/vim-airline')
-Plug('vim-airline/vim-airline-themes')
-Plug('enricobacis/vim-airline-clock')
+-- lualine. User edit status bar
+Plug('nvim-lualine/lualine.nvim')
 
 -- will should replace nvim-tree
 Plug('scrooloose/nerdtree')
@@ -45,12 +44,11 @@ Plug('pixelneo/vim-python-docstring')
 
 -- render-markdown.nvim
 Plug('echasnovski/mini.nvim', { ['branch'] = 'stable' })    -- For render-markdown
-Plug('nvim-tree/nvim-web-devicons')  -- For render-markdown
 Plug('MeanderingProgrammer/render-markdown.nvim')    -- pip install pylatexenc
 
 vim.call('plug#end')
 
-require('plugin.vim-airline')
+require('plugin.lualine')
 require('plugin.nerdtree')
 require('plugin.delimitmate')
 require('plugin.tagbar')
@@ -60,7 +58,7 @@ require('plugin.nvim-treesitter')
 require('plugin.nerdcommenter')
 require('plugin.codesnap')
 require('plugin.image')
-require('plugin.multicursor')
+-- require('plugin.multicursor')
 require('plugin.vim-python-doc')
 require('plugin.coc')
 require('plugin.coc-git')

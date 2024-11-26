@@ -3,6 +3,7 @@ vim.opt.runtimepath:append('~/.vim,~/.vim/after')
 vim.opt.packpath:append('~/.vim')
 
 -- tab/indent
+vim.opt.showtabline = 2
 vim.opt.expandtab = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4

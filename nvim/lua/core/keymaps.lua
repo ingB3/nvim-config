@@ -6,7 +6,7 @@ map('n', 'T', ':terminal<CR>')
 map('t', '<C-[>', '<C-\\><C-n>')
 
 -- Line number
-map('n', '<leader>r', functions.toggleRelativeNumber)
+map('n', '<leader>t', functions.toggleRelativeNumber)
 
 -- Indent
 map('v', '<', '<gv')

@@ -8,7 +8,6 @@ Plug('folke/tokyonight.nvim')
 Plug('ryanoasis/vim-devicons')
 Plug('3rd/image.nvim')
 Plug('jake-stewart/multicursor.nvim')
-Plug('airblade/vim-gitgutter')
 
 -- vim-airline
 Plug('vim-airline/vim-airline')
@@ -17,6 +16,9 @@ Plug('enricobacis/vim-airline-clock')
 
 -- will should replace nvim-tree
 Plug('scrooloose/nerdtree')
+
+-- vim-gitgutter
+Plug('airblade/vim-gitgutter')
 
 -- will should replace nvim-autopaires
 Plug('Raimondi/delimitMate')
@@ -50,6 +52,7 @@ vim.call('plug#end')
 
 require('plugin.vim-airline')
 require('plugin.nerdtree')
+require('plugin.vim-gitgutter')
 require('plugin.delimitmate')
 require('plugin.tagbar')
 require('plugin.indentLine')

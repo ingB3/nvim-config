@@ -14,6 +14,14 @@ end
 # mv ~/.config/fish/config.fish ~/.backup
 # cp config.fish ~/.config/fish/config.fish
 
+echo copy coc-snippets    ...
+if test -d ~/.config/coc/ultisnips
+    mv -r ~/.config/coc/ultisnips ~/.backup
+else
+    mkdir ~/.config/coc ~/.config/coc/ultisnipsend
+end
+cp -r ./snippets ~/.config/coc/ultisnips
+
 echo cp ./nvim ~/.config/nvim
 mv ./nvim ~/.backup
 cp -r ./nvim ~/.config/nvim

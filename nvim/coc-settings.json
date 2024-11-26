@@ -11,6 +11,12 @@
     "winblend": 20,
     "shadow": false
   },
+  "diagnostic.floatConfig": {
+    "border": true,
+    "rounded": true,
+    "winblend": 0,
+    "shadow": false
+  },
   "python.pythonPath": "/Users/ingbe/.conda/envs/root_env/bin/python3",
   "python.linting.pylintEnabled": false,
   "python.linting.flake8Enabled": true,

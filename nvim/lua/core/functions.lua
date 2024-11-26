@@ -8,18 +8,18 @@ local function toggleRelativeNumber()
 end
 
 local function number2superscript(num)
-	local convert = {
-		['0'] = '⁰',
-		['1'] = '¹',
-		['2'] = '²',
-		['3'] = '³',
-		['4'] = '⁴',
-		['5'] = '⁵',
-		['6'] = '⁶',
-		['7'] = '⁷',
-		['8'] = '⁸',
-		['9'] = '⁹',
-	}
+    local convert = {
+        ['0'] = '⁰',
+        ['1'] = '¹',
+        ['2'] = '²',
+        ['3'] = '³',
+        ['4'] = '⁴',
+        ['5'] = '⁵',
+        ['6'] = '⁶',
+        ['7'] = '⁷',
+        ['8'] = '⁸',
+        ['9'] = '⁹',
+    }
     local superscript = ''
     local strNums = vim.split(tostring(num), '')
     for idx = 1, #strNums do

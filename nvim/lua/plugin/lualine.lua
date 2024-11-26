@@ -1,5 +1,11 @@
 local tokyonight_moon = require('plugin.lualine.theme.tokyonight-moon')
 
+local function bufferFormat(buffer, context)
+    -- local number2superscript = require('core.functions').number2superscript
+    -- return buffer .. number2superscript(context.bufnr)
+    return buffer .. '｜' .. context.bufnr
+end
+
 require('lualine').setup {
   options = {
     icons_enabled = true,
@@ -40,8 +46,9 @@ require('lualine').setup {
     lualine_z = {}
   },
   tabline = {
-    lualine_a = {'buffers'},
-    lualine_b = {'tabs'},
+    lualine_a = {
+        { 'buffers', fmt = bufferFormat } },
+    lualine_b = {},
     lualine_c = {},
     lualine_x = {},
     lualine_y = {},

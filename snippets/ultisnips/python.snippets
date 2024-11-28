@@ -25,7 +25,17 @@
 # Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
 snippet main "main entry point, main check" b
 def main() -> None:
+	${1}
 
 if __name__ == '__main__':
 	main()
+endsnippet
+
+snippet numpy "import numpy" b
+import numpy as np
+endsnippet
+
+snippet root "import pyROOT and numpy" b
+import numpy as np
+import ROOT as rt
 endsnippet

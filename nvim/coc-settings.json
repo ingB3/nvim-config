@@ -39,5 +39,5 @@
   "coc.source.vimtex.filetypes": [
     "tex"
   ],
-  "git.enableGutters": true
+  "git.enableGutters": true,
 }

@@ -96,89 +96,18 @@ snippet beamer "LaTeX beamer UoS theme" b
 \section*{Infomation}
 % \subsection{Second Subsection}
 
-\begin{frame}{Make Titles Informative.}{Subtitles are optional.}
+\begin{frame}{Introduction}
 
-    You can create overlays\dots
-    \begin{itemize}
-    \item using the \texttt{pause} command:
-        \begin{itemize}
-        \item
-            First item.
-            \pause
-        \item    
-            Second item.
-            \pause
-        \end{itemize}
-    \item \texttt{enumerate} command:
-        \begin{enumerate}
-        \item
-            Third item.
-            \pause
-        \item
-            Fourth item.
-        \end{enumerate}
-    \end{itemize}
 \end{frame}
 
-\begin{frame}{Simple table in beamer}
+\begin{frame}{Resurt}
 
-    \begin{table}
-    \begin{tabular}{| c || c | c |}
-        \hline
-        No. & Name & Age \\
-        \hline \hline
-        1 & John T & 24 \\
-        2 & Norman P & 8 \\
-        3 & Alex K & 14 \\ 
-        \hline
-    \end{tabular}
-    \caption{Name and age of students}
-    \end{table}
-\end{frame}
-
-\begin{frame}
-
-    \begin{columns}
-
-    \begin{column}{0.5\textwidth}
-    \begin{figure}
-        \includegraphics[scale=0.15]{~/Pictures/uos-logo.png}
-        \caption{Test figure}
-    \end{figure}
-    \end{column}
-
-    \begin{column}{0.5\textwidth}
-        \includegraphics[scale=0.3]{~/Pictures/testfig.pdf}
-        \includegraphics[scale=0.3]{~/Pictures/testfig.pdf}
-    \end{column}
-
-    \end{columns}
 \end{frame}
 
 \section*{Summary}
 
 \begin{frame}{Summary}
 
-    \begin{itemize}
-    \item
-        The \alert{first main message} of your talk in one or two lines.
-    \item
-        The \alert{second main message} of your talk in one or two lines.
-    \item
-        Perhaps a \alert{third message}, but not more than that.
-    \end{itemize}
-  
-    \vskip0pt plus.5fill
-    \begin{itemize}
-    \item
-        Outlook
-        \begin{itemize}
-        \item
-            Something you haven't solved.
-        \item
-            Something else you haven't solved.
-        \end{itemize}
-    \end{itemize}
 \end{frame}
 
 \section{Backup}
@@ -187,4 +116,85 @@ snippet beamer "LaTeX beamer UoS theme" b
 \end{frame}
 
 \end{document}
+endsnippet
+
+snippet frame "beamer frame" b
+\begin{frame}{${1}}
+
+	${2}
+\end{frame}
+endsnippet
+
+snippet table "beamer simple table" b
+\begin{table}
+\begin{tabular}{| c || c | c |}
+	\hline
+	No. & Name & Age \\\\
+	\hline \hline
+	1 & John T & 24 \\\\
+	2 & Norman P & 8 \\\\
+	3 & Alex K & 14 \\\\
+	\hline
+\end{tabular}
+\caption{Name and age of students}
+\end{table}
+endsnippet
+
+snippet figure "beamer figure with caption" b
+\begin{figure}
+    \includegraphics[scale=1]{${1}}
+    \caption{${2}}
+\end{figure}
+endsnippet
+
+snippet image "beamer image" b
+\includegraphics[scale=1]{${1}}
+endsnippet
+
+snippet columns "beamer columns" b
+\begin{columns}
+
+	${1}
+\end{columns}
+endsnippet
+
+snippet column_line "beamer new column line" b
+\begin{column}{${1}\textwidth}
+${2}
+\end{column}
+endsnippet
+
+snippet itemize "beamber itemize" b
+\begin{itemize}
+\item
+	${1}
+\end{itemize}
+endsnippet
+
+snippet enumerate "beamer enumerate" b
+\begin{enumerate}
+\item
+	${1}
+\end{enumerate}
+endsnippet
+
+snippet item "beamer item for itemize or enumerate" b
+\item
+	${1}
+endsnippet
+
+snippet pause "beamer pause, overlay" b
+\pause
+endsnippet
+
+snippet section "beamer section" b
+\section{${1}}
+endsnippet
+
+snippet alert "beamer alert" b
+\alert{${1}}
+endsnippet
+
+snippet vskip "beamer vskip" b
+\vskip0pt plus.5fill
 endsnippet

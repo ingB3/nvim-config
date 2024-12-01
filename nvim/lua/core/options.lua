@@ -37,3 +37,6 @@ vim.opt.clipboard = 'unnamed'
 
 vim.g.loaded_perl_provider = 0
 vim.g.python3_host_prog = '$VIMPYTHON'
+
+-- tex flavor
+vim.g.tex_flavor = 'latex'

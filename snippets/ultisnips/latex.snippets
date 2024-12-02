@@ -119,9 +119,9 @@ snippet beamer "LaTeX beamer UoS theme" b
 endsnippet
 
 snippet frame "beamer frame" b
-\begin{frame}{${1}}
+\begin{frame}{${1:Title}}
 
-	${2}
+	${2:Contents}
 \end{frame}
 endsnippet
 
@@ -142,45 +142,51 @@ endsnippet
 
 snippet figure "beamer figure with caption" b
 \begin{figure}
-    \includegraphics[scale=1]{${1}}
-    \caption{${2}}
+    \includegraphics[scale=1]{${1:Image_path}}
+    \caption{${2:Caption}}
 \end{figure}
 endsnippet
 
 snippet image "beamer image" b
-\includegraphics[scale=1]{${1}}
+\includegraphics[scale=1]{${1:Image_path}}
 endsnippet
 
 snippet columns "beamer columns" b
 \begin{columns}
 
-	${1}
+	\begin{column}{${1:Column_width}\textwidth}
+	${2:Contents}
+	\end{column}
+
+	\begin{column}{${1:Column_width}\textwidth}
+	${3:Contents}
+	\end{column}
 \end{columns}
 endsnippet
 
 snippet column_line "beamer new column line" b
-\begin{column}{${1}\textwidth}
-${2}
+\begin{column}{${1:Column_width}\textwidth}
+${2:Contents}
 \end{column}
 endsnippet
 
 snippet itemize "beamber itemize" b
 \begin{itemize}
 \item
-	${1}
+	${1:Contents}
 \end{itemize}
 endsnippet
 
 snippet enumerate "beamer enumerate" b
 \begin{enumerate}
 \item
-	${1}
+	${1:Contents}
 \end{enumerate}
 endsnippet
 
 snippet item "beamer item for itemize or enumerate" b
 \item
-	${1}
+	${1:Contents}
 endsnippet
 
 snippet pause "beamer pause, overlay" b
@@ -188,11 +194,11 @@ snippet pause "beamer pause, overlay" b
 endsnippet
 
 snippet section "beamer section" b
-\section{${1}}
+\section{${1:Section Title}}
 endsnippet
 
 snippet alert "beamer alert" b
-\alert{${1}}
+\alert{${1:text}}
 endsnippet
 
 snippet vskip "beamer vskip" b

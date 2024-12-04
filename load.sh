@@ -21,6 +21,6 @@ else
 fi
 cp -r ./snippets ~/.config/coc/ultisnips
 
-echo cp ./config/nvim/* ~/.config/nvim/
+echo copy nvim config
 mv -r ~/.config/nvim ~/.backup
-cp -r .nvim ~/.config/nvim/
+cp -r ./nvim ~/.config/nvim/

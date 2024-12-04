@@ -14,8 +14,8 @@ fi
 # cp -r ./local/share/nvim/site/autoload/airline/themes ~/.local/share/nvim/site/autoload/airline/
 
 echo copy coc-snippets    ...
-if test -d ~/.config/coc/ultisnips
-    mv ~/.config/coc/ultisnips ~/.backup; then
+if test -d ~/.config/coc/ultisnips; then
+    mv ~/.config/coc/ultisnips ~/.backup
 else
     mkdir ~/.config/coc ~/.config/coc/ultisnipsend
 fi

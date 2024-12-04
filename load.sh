@@ -1,8 +1,7 @@
 #!/bin/bash
 
 echo mkdir ~/.backup
-if test -d ~/.backup
-then
+if ! test -d ~/.backup; then
 else
     mkdir ~/.backup
 fi
@@ -17,8 +16,7 @@ fi
 
 echo copy coc-snippets    ...
 if test -d ~/.config/coc/ultisnips
-    mv ~/.config/coc/ultisnips ~/.backup
-then
+    mv ~/.config/coc/ultisnips ~/.backup; then
 else
     mkdir ~/.config/coc ~/.config/coc/ultisnipsend
 fi

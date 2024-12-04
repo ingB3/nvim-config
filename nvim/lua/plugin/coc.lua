@@ -10,6 +10,7 @@ vim.g.coc_global_extensions = {
     'coc-markdown-preview-enhanced',
     'coc-lua',
     'coc-git',
+    'coc-vimtex',
 }
 
 -- Having longer updatetime (default is 4000 ms = 4s) leads to noticeable

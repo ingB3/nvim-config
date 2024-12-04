@@ -2,7 +2,6 @@
 
 echo mkdir ~/.backup
 if ! test -d ~/.backup; then
-else
     mkdir ~/.backup
 fi
 

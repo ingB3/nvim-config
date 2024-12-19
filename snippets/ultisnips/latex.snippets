@@ -34,8 +34,9 @@ snippet beamer "LaTeX beamer UoS theme" b
     \setbeamercovered{transparent}
 }
 \usepackage[english]{babel}
-\usepackage[latin1]{inputenc}
+% \usepackage[latin1]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{kotex}
 \setbeamertemplate{itemize items}[circle]
 \setbeamertemplate{enumerate items}[square]
 
@@ -93,14 +94,16 @@ snippet beamer "LaTeX beamer UoS theme" b
     \titlepage
 \end{frame}
 
-\section*{Infomation}
+\section*{Introduction}
 % \subsection{Second Subsection}
 
 \begin{frame}{Introduction}
 
 \end{frame}
 
-\begin{frame}{Resurt}
+\section*{Result}
+
+\begin{frame}{Result}
 
 \end{frame}
 
@@ -119,9 +122,9 @@ snippet beamer "LaTeX beamer UoS theme" b
 endsnippet
 
 snippet frame "beamer frame" b
-\begin{frame}{${1:Title}}
+\begin{frame}{${1:<Title>}}
 
-	${2:Contents}
+	${2:<Contents>}
 \end{frame}
 endsnippet
 
@@ -142,24 +145,24 @@ endsnippet
 
 snippet figure "beamer figure with caption" b
 \begin{figure}
-    \includegraphics[scale=1]{${1:Image_path}}
-    \caption{${2:Caption}}
+    \includegraphics[width=\textwidth]{${1:<image_path>}}
+    \caption{${2:<Caption>}}
 \end{figure}
 endsnippet
 
 snippet image "beamer image" b
-\includegraphics[scale=1]{${1:Image_path}}
+\includegraphics[width=\textwidth]{${1:<image_path>}}
 endsnippet
 
 snippet columns "beamer columns" b
 \begin{columns}
 
 	\begin{column}{${1:Column_width}\textwidth}
-	${2:Contents}
+	${2:<Contents>}
 	\end{column}
 
 	\begin{column}{${1:Column_width}\textwidth}
-	${3:Contents}
+	${3:<Contents>}
 	\end{column}
 \end{columns}
 endsnippet
@@ -172,35 +175,50 @@ endsnippet
 
 snippet itemize "beamber itemize" b
 \begin{itemize}
-\item
-	${1:Contents}
+	\item ${1:<Contents>}
 \end{itemize}
 endsnippet
 
 snippet enumerate "beamer enumerate" b
 \begin{enumerate}
-\item
-	${1:Contents}
+	\item ${1:<Contents>}
 \end{enumerate}
 endsnippet
 
 snippet item "beamer item for itemize or enumerate" b
-\item
-	${1:Contents}
+\item ${1:<Contents>}
 endsnippet
 
-snippet pause "beamer pause, overlay" b
+snippet pause "beamer pause, overlay" i
 \pause
 endsnippet
 
 snippet section "beamer section" b
-\section{${1:Section Title}}
+\section{${1:<Section Title>}}
 endsnippet
 
-snippet alert "beamer alert" b
-\alert{${1:text}}
+snippet alert "beamer alert" i
+\alert{${1:<text>}}
 endsnippet
 
 snippet vskip "beamer vskip" b
 \vskip0pt plus.5fill
+endsnippet
+
+snippet center "beamer center" b
+\begin{center}
+	${1:<Contents>}
+\end{center}
+endsnippet
+
+snippet font_size "LaTeX change font_size in scope" b
+\fontsize{${1:<size>}pt}{${2:<bskip>}pt}\selectfont
+endsnippet
+
+snippet code_block "LaTeX code block" i
+\texttt{${1:<codes>}}
+endsnippet
+
+snippet bold "LaTeX bold font" i
+\textbf{${1:<text>}}
 endsnippet

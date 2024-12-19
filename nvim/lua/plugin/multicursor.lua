@@ -5,22 +5,22 @@ mc.setup()
 local set = vim.keymap.set
 
 -- Add or skip cursor above/below the main cursor.
--- set({"n", "v"}, "<up>",
---     function() mc.lineAddCursor(-1) end)
--- set({"n", "v"}, "<down>",
---     function() mc.lineAddCursor(1) end)
--- set({"n", "v"}, "<leader><up>",
---     function() mc.lineSkipCursor(-1) end)
--- set({"n", "v"}, "<leader><down>",
---     function() mc.lineSkipCursor(1) end)
-set({"n", "v"}, "K",
+set({"n", "v"}, "<up>",
     function() mc.lineAddCursor(-1) end)
-set({"n", "v"}, "J",
+set({"n", "v"}, "<down>",
     function() mc.lineAddCursor(1) end)
-set({"n", "v"}, "<leader>k",
+set({"n", "v"}, "<leader><up>",
     function() mc.lineSkipCursor(-1) end)
-set({"n", "v"}, "<leader>j",
+set({"n", "v"}, "<leader><down>",
     function() mc.lineSkipCursor(1) end)
+-- set({"n", "v"}, "K",
+--     function() mc.lineAddCursor(-1) end)
+-- set({"n", "v"}, "J",
+--     function() mc.lineAddCursor(1) end)
+-- set({"n", "v"}, "<leader>k",
+--     function() mc.lineSkipCursor(-1) end)
+-- set({"n", "v"}, "<leader>j",
+--     function() mc.lineSkipCursor(1) end)
 
 -- Add or skip adding a new cursor by matching word/selection
 set({"n", "v"}, "<leader>n",

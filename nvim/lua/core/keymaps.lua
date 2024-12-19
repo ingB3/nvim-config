@@ -3,7 +3,8 @@ local functions = require('core.functions')
 
 -- Terminal mode
 map('n', 'T', ':terminal<CR>')
-map('t', '<C-[>', '<C-\\><C-n>')
+map('t', '<C-[>', '<esc>')
+map('t', '<esc>', '<C-\\><C-n>')
 
 -- Line number
 map('n', '<leader>t', functions.toggleRelativeNumber)

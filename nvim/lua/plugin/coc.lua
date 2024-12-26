@@ -50,8 +50,8 @@ map("i", "<c-r>", "coc#refresh()", {silent = true, expr = true})
 
 -- Use `[g` and `]g` to navigate diagnostics
 -- Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
-map("n", "[g", "<Plug>(coc-diagnostic-prev)", {silent = true})
-map("n", "]g", "<Plug>(coc-diagnostic-next)", {silent = true})
+map("n", "[a", "<Plug>(coc-diagnostic-prev)", {silent = true})
+map("n", "]a", "<Plug>(coc-diagnostic-next)", {silent = true})
 
 -- GoTo code navigation
 map("n", "gd", "<Plug>(coc-definition)", {silent = true})

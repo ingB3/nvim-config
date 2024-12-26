@@ -4,6 +4,7 @@ require'nvim-treesitter.configs'.setup {
       "bash",
       "fish",
       "c",
+      "cpp",
       "python",
       "lua",
       "vim",
@@ -13,6 +14,14 @@ require'nvim-treesitter.configs'.setup {
       "markdown_inline",
       "latex",
       "php",
+      "make",
+      "cmake",
+      "csv",
+      "diff",
+      "gitcommit",
+      "gitignore",
+      "json",
+      "ssh_config",
   },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)

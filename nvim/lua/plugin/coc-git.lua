@@ -1,8 +1,8 @@
 local map = vim.keymap.set
 
 -- navigate chunks of current buffer
-map('n', '{g', '<Plug>(coc-git-prevchunk)')
-map('n', '}g', '<Plug>(coc-git-nextchunk)')
+map('n', '[g', '<Plug>(coc-git-prevchunk)')
+map('n', ']g', '<Plug>(coc-git-nextchunk)')
 -- navigate conflicts of current buffer
 map('n', '[c', '<Plug>(coc-git-prevconflict)')
 map('n', ']c', '<Plug>(coc-git-nextconflict)')

@@ -10,11 +10,8 @@ Plug('ryanoasis/vim-devicons')
 Plug('3rd/image.nvim')
 Plug('jake-stewart/multicursor.nvim')
 
--- lualine. User edit status bar
 Plug('nvim-lualine/lualine.nvim')
-
--- will should replace nvim-tree
-Plug('scrooloose/nerdtree')
+Plug('nvim-tree/nvim-tree.lua')
 
 -- will should replace nvim-autopaires
 Plug('Raimondi/delimitMate')
@@ -49,7 +46,7 @@ Plug('MeanderingProgrammer/render-markdown.nvim')    -- pip install pylatexenc
 vim.call('plug#end')
 
 require('plugin.lualine')
-require('plugin.nerdtree')
+require('plugin.nvim-tree')
 require('plugin.delimitmate')
 require('plugin.tagbar')
 require('plugin.indentLine')

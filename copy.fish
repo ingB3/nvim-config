@@ -8,13 +8,6 @@
 
 echo copy nvim config    ...
 if test -d ./nvim
-    rm -r ./nvim
+  rm -r ./nvim
 end
 cp -r ~/.config/nvim ./nvim
-
-echo copy coc-snippets    ...
-if test -d ./snippets
-    rm -r ./snippets
-end
-mkdir ./snippets
-cp -r ~/.config/coc/ultisnips ./snippets

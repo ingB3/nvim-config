@@ -32,7 +32,6 @@ require('lualine').setup {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {'filename'},
-    -- lualine_x = {'encoding', 'fileformat', 'filetype'},
     lualine_x = {'encoding', 'filetype'},
     lualine_y = {'location'},
     lualine_z = {'progress'}
@@ -48,11 +47,11 @@ require('lualine').setup {
   tabline = {
     lualine_a = {'tabs'},
     lualine_b = {
-        { 'buffers', fmt = bufferFormat } },
+      { 'buffers', fmt = bufferFormat } },
     lualine_c = {},
     lualine_x = {},
     lualine_y = {},
-    lualine_z = {"os.date('%H:%M:%S')"}
+    lualine_z = {'ctime'}
   },
   winbar = {},
   inactive_winbar = {},

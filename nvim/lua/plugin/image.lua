@@ -7,17 +7,16 @@ require("image").setup({
       clear_in_insert_mode = false,
       download_remote_images = true,
       only_render_image_at_cursor = false,
-      -- only_render_image_at_cursor = true,
       filetypes = { "markdown", "vimwiki" },
     },
     neorg = {
       enabled = true,
       filetypes = { "norg" },
     },
-    typst = {
-      enabled = true,
-      filetypes = { "typst" },
-    },
+    -- typst = {
+    --   enabled = true,
+    --   filetypes = { "typst" },
+    -- },
     html = {
       enabled = false,
     },

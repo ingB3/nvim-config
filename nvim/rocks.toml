@@ -1,0 +1,62 @@
+# This is your rocks.nvim plugins declaration file.
+# Here is a small yet pretty detailed example on how to use it:
+#
+# [plugins]
+# nvim-treesitter = "semver_version"  # e.g. "1.0.0"
+
+# List of non-Neovim rocks.
+# This includes things like `toml` or other lua packages.
+[rocks]
+
+# List of Neovim plugins to install alongside their versions.
+# If the plugin name contains a dot then you must add quotes to the key name!
+[plugins]
+"rocks.nvim" = "2.43.0"
+"rocks-config.nvim" = "3.1.0"
+"rocks-git.nvim" = "2.5.2"
+"nvim-tree.lua" = "1.6.0"
+"tokyonight.nvim" = { version = "4.11.0", colorscheme = [ "tokyonight", "tokyonight-moon", "tokyonight-storm" ] }
+"lualine.nvim" = "scm"
+"telescope.nvim" = "scm"
+"telescope-ui-select.nvim" = "scm"
+"render-markdown.nvim" = "7.7.0"
+"indent-blankline.nvim" = "3.8.6"
+nvim-autopairs = "scm"
+"comment.nvim" = "0.8.0"
+nvim-cmp = "scm"
+cmp-nvim-lsp = "scm"
+cmp-buffer = "scm"
+cmp-path = "scm"
+cmp-cmdline = "scm"
+luasnip = "2.3.0"
+cmp_luasnip = "scm"
+luarocks = "3.11.1"
+"mason.nvim" = "1.10.0"
+"mason-lspconfig.nvim" = "1.31.0"
+nvim-lspconfig = "1.2.0"
+"yazi.nvim" = "6.11.0"
+"gitsigns.nvim" = "0.9.0"
+"rocks-lazy.nvim" = "1.1.1"
+
+[plugins."nvim-treesitter.nvim"]  # luarocks version not work
+git = "nvim-treesitter/nvim-treesitter"
+build = ":TSUpdate"
+
+[plugins."codesnap.nvim"]
+git = "mistricky/codesnap.nvim"
+build = "make"
+
+[plugins."image.nvim"]  # luarocks version not work
+git = "3rd/image.nvim"
+
+[plugins."lualine-time" ]
+git = "archibate/lualine-time"
+rev = "8838875e2e787293bb905d23dbb91ef4bde188ea"
+
+[plugins.vim-python-docstring ]
+git = "pixelneo/vim-python-docstring"
+rev = "8deaa27ca87dd5f9bba36da41fe77b64312aa51e"
+
+[plugins.vim-fugitive ]
+git = "tpope/vim-fugitive"
+rev = "v3.7"

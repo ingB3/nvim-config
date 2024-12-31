@@ -25,9 +25,6 @@ local handlers =  {
   ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border, scrollbar = scrollbar }),
 }
 
--- Do not forget to use the on_attach function
--- lspconfig.myserver.setup { handlers=handlers }
-
 -- To instead override globally
 local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
 function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
@@ -36,9 +33,8 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
   return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
 
-require 'lspconfig'.myservertwo.setup {}
-
 lspconfig.lua_ls.setup({
+  handlers=handlers,
   settings = {
     Lua = {
       diagnostics = {

@@ -14,7 +14,7 @@ make INSTALL_TOP=$HOME/opt/lua@5.1 install
 put `~/opt/lua@5.1/bin` in the path in your `.bashrc`
 ```bash
 # .bashrc
-export PATH="$PATH:~/opt/lua@5.1/bin/"
+export PATH="$PATH:$HOME/opt/lua@5.1/bin/"
 ```
 
 ## ~setup [`luarocks`](https://luarocks.org/)~
@@ -22,9 +22,15 @@ export PATH="$PATH:~/opt/lua@5.1/bin/"
 wget https://luarocks.org/releases/luarocks-3.11.1.tar.gz
 tar zxpf luarocks-3.11.1.tar.gz
 cd luarocks-3.11.1
-./configure
+./configure --prefix=$HOME/opt/luarocks
+# ./configure --prefix=$HOME/opt/luarocks --with-lua=$HOME/opt/luajit --with-lua-include=$HOME/opt/luajit/include/luajit-2.1
 make
-sudo make install
+make install
+```
+put `~/opt/luajit/bin` in the path in your `.bashrc`
+```bash
+# .bashrc
+export PATH="$PATH:$HOME/opt/luarocks/bin/"
 ```
 
 ## setup [`luajit`](https://luajit.org/)
@@ -32,12 +38,12 @@ sudo make install
 git clone https://luajit.org/git/luajit.git
 cd luajit
 make
-make install PREFIX=~/opt/luajit
+make install PREFIX=$HOME/opt/luajit
 ```
 put `~/opt/luajit/bin` in the path in your `.bashrc`
 ```bash
 # .bashrc
-export PATH="$PATH:~/opt/luajit/bin/"
+export PATH="$PATH:$HOME/opt/luajit/bin/"
 ```
 
 ## setup `rocks.nvim`

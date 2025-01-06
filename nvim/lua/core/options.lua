@@ -20,6 +20,11 @@ vim.opt.termguicolors = true
 vim.opt.signcolumn = 'auto'
 vim.opt.updatetime = 300
 
+-- disable netrw at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+
 -- search
 vim.opt.incsearch = true
 vim.opt.ignorecase = false

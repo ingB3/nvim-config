@@ -1,3 +1,3 @@
 require('core')
-require('plugin')
+-- require('plugin')
 -- print(os.getenv('VIMPYTHON'))

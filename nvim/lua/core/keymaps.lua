@@ -7,7 +7,7 @@ map('t', '<C-[>', '<esc>')
 map('t', '<esc>', '<C-\\><C-n>')
 
 -- Line number
-map('n', '<leader>t', functions.toggleRelativeNumber)
+map('n', '<leader>n', functions.toggleRelativeNumber)
 
 -- Indent
 map('v', '<', '<gv')

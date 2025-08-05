@@ -1,60 +1,39 @@
-# Dependence
-- `rocks.nvim` need `lua-5.1` and `luarocks` or `luajit`
+# nvim-config
 
-# Installation
-## ~setup [`lua-5.1`](https://www.lua.org/)~
-```bash
-wget https://www.lua.org/ftp/lua-5.1.5.tar.gz
-tar xzf lua-5.1.5.tar.gz
-cd lua-5.1.5
-make macosx
-mkdir ~/opt
-make INSTALL_TOP=$HOME/opt/lua@5.1 install
-```
-put `~/opt/lua@5.1/bin` in the path in your `.bashrc`
-```bash
-# .bashrc
-export PATH="$PATH:$HOME/opt/lua@5.1/bin/"
-```
+My personal Neovim configuration, managed with `lazy.nvim`.
 
-## ~setup [`luarocks`](https://luarocks.org/)~
-```bash
-wget https://luarocks.org/releases/luarocks-3.11.1.tar.gz
-tar zxpf luarocks-3.11.1.tar.gz
-cd luarocks-3.11.1
-./configure --prefix=$HOME/opt/luarocks
-# ./configure --prefix=$HOME/opt/luarocks --with-lua=$HOME/opt/luajit --with-lua-include=$HOME/opt/luajit/include/luajit-2.1
-make
-make install
-```
-put `~/opt/luajit/bin` in the path in your `.bashrc`
-```bash
-# .bashrc
-export PATH="$PATH:$HOME/opt/luarocks/bin/"
-```
+## Prerequisites
 
-## setup [`luajit`](https://luajit.org/)
-```bash
-git clone https://luajit.org/git/luajit.git
-cd luajit
-make
-make install PREFIX=$HOME/opt/luajit
-```
-put `~/opt/luajit/bin` in the path in your `.bashrc`
-```bash
-# .bashrc
-export PATH="$PATH:$HOME/opt/luajit/bin/"
-```
+- [Neovim](https://neovim.io/) (v0.8.0 or higher is recommended for `lazy.nvim`)
+- [Git](https://git-scm.com/)
+- A Nerd Font (optional, but recommended for UI icons)
+- `ImageMagick` (optional, for `image.nvim` plugin)
 
-## setup `rocks.nvim`
-```bash
-git clone https://github.com/ingB3/nvim-config.git
-cd nvim-config
-./load.sh
-nvim
-```
-copy `nvim` config folder, after then run `nvim`
-`nvim` automattically load `/nvim/lua/core/rocks.lua`, install `luarocks` and `rocks.nvim`
+## Installation
 
-- `image.nvim` need `ImageMagick`
-    - Using `processor = "magick_cli"` option
+1.  Clone the repository:
+    ```bash
+    git clone https://github.com/ingB3/nvim-config.git
+    ```
+
+2.  Navigate to the directory:
+    ```bash
+    cd nvim-config
+    ```
+
+3.  Run the setup script to link the configuration to your `~/.config/nvim`:
+    ```bash
+    ./load_from_repository.sh
+    ```
+    (Use `./load_from_repository.fish` if you are using the fish shell.)
+
+4.  Start Neovim:
+    ```bash
+    nvim
+    ```
+
+On the first launch, `lazy.nvim` will automatically install all the plugins.
+
+## Notes
+
+- The `image.nvim` plugin requires `ImageMagick` to be installed for image viewing functionality.

@@ -5,30 +5,41 @@ local scrollbar = "║"
 
 return {
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     config = function()
       require("mason").setup()
     end,
   },
   {
-    "williamboman/mason-lspconfig.nvim",
-    config = function()
-      require("mason-lspconfig").setup({
-        ensure_installed = {
-          "lua_ls",
-          "clangd",
-          "texlab",
-          "pylsp",
-          "vimls",
-          "yamlls",
-          "bashls",
-        },
-      })
-    end,
+    "mason-org/mason-lspconfig.nvim",
+    opts = {
+      ensure_installed = {
+        "lua_ls",
+        "clangd",
+        "texlab",
+        "pylsp",
+        "vimls",
+        "yamlls",
+        "bashls",
+      },
+    },
+    dependencies = {
+      { "mason-org/mason.nvim", opts = {} },
+        "neovim/nvim-lspconfig",
+    },
   },
   {
     "neovim/nvim-lspconfig",
     config = function()
+      vim.diagnostic.config({ virtual_text = false })
+
+      vim.api.nvim_create_autocmd("CursorHold", {
+        pattern = "*",
+        callback = function()
+          vim.diagnostic.open_float(nil, { focus = false })
+        end,
+      })
+
       local lspconfig = require('lspconfig')
       -- LSP settings (for overriding per client)
       local handlers =  {

@@ -176,6 +176,7 @@ return({
     }),
     i(2, '<Contents>'),
     t({
+      '',
       '\t\\end{column}',
       '',
       '\t\\begin{column}{',
@@ -187,7 +188,7 @@ return({
     }),
     i(3, '<Contents>'),
     t({
-      '}',
+      '',
       '\t\\end{column}',
       '\\end{columns}',
     })
